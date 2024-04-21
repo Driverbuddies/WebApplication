@@ -1,7 +1,8 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class user_form extends StatefulWidget {
-  const user_form({super.key});
+  const user_form({Key? key}) : super(key: key);
 
   @override
   State<user_form> createState() => _user_formState();
@@ -13,86 +14,105 @@ class _user_formState extends State<user_form> {
     return Center(
       child: Container(
         width: 1000, // You can manually update the width here
-        color: const Color.fromARGB(255, 134, 139, 96),
+        color: const Color(0xff252734),
         padding: const EdgeInsets.all(24.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Left side - Image
             Container(
-              width: 500,
-              height: 300,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                      "assets/images.png"), // Add your image path here
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            const SizedBox(
-                width: 24.0), // Add some space between image and form
-            // Right side - Form details
+  width: 500,
+  height: 300,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(20.0), // Adding border radius
+    image: const DecorationImage(
+      image: AssetImage("assets/images/images.png"),
+      fit: BoxFit.cover,
+    ),
+  ),
+),
+
+
+            const SizedBox(width: 50), // Increased width of SizedBox
+
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Name',
                       fillColor: Colors.black87,
                       filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                     keyboardType: TextInputType.text,
                     // You can add validation logic here if required
                   ),
                   const SizedBox(height: 16.0), // Add some space between fields
                   TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Email',
                       fillColor: Colors.black87,
                       filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                     keyboardType: TextInputType.emailAddress,
                     // You can add validation logic here if required
                   ),
                   const SizedBox(height: 16.0), // Add some space between fields
                   TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Starting Location',
                       fillColor: Colors.black87,
                       filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                     keyboardType: TextInputType.text,
                     // You can add validation logic here if required
                   ),
                   const SizedBox(height: 16.0), // Add some space between fields
                   TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Ending Location',
                       fillColor: Colors.black87,
                       filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                     keyboardType: TextInputType.text,
                     // You can add validation logic here if required
                   ),
                   const SizedBox(height: 16.0), // Add some space between fields
                   TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Time',
                       fillColor: Colors.black87,
                       filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                     keyboardType: TextInputType.datetime,
                     // You can add validation logic here if required
                   ),
                   const SizedBox(height: 16.0), // Add some space between fields
                   TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Vehicle',
                       fillColor: Colors.black87,
                       filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                     keyboardType: TextInputType.text,
                     // You can add validation logic here if required
@@ -114,8 +134,7 @@ class _user_formState extends State<user_form> {
                             Colors.blue, // Change the button color here
                         padding: const EdgeInsets.all(16.0),
                       ),
-                      child:
-                          const Text('Submit', style: TextStyle(fontSize: 18)),
+                      child: const Text('Submit', style: TextStyle(fontSize: 18)),
                     ),
                   ),
                 ],

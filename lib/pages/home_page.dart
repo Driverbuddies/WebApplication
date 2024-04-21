@@ -10,7 +10,7 @@ import 'package:new_portfolio/widgets/drawer_mobile.dart';
 import 'package:new_portfolio/widgets/header_desktop.dart';
 import 'package:new_portfolio/widgets/signup_user.dart';
 import 'package:new_portfolio/widgets/user_form.dart';
-import 'package:new_portfolio/widgets/user_login.dart';
+import 'package:new_portfolio/widgets/login_user.dart';
 import '../constants/size.dart';
 // import "../assets/images.png";
 // import 'package:new_portfolio/styles/style.dart';
@@ -54,15 +54,15 @@ class _homePageState extends State<homePage> {
                 },
               ),
 
-            // User form
+            // User form->1
             const user_form(),
             
 
-            // Signup form 
+            // Signup form->2
             const signup_user(),
 
-            // contact
-            const user_login(),
+            // contact->3
+            const login_user(),
 
 
             // about us
