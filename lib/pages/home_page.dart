@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -19,14 +18,14 @@ import 'package:new_portfolio/widgets/header_mobile.dart';
 // import 'package:new_portfolio/widgets/header_desktop.dart';
 // import 'package:new_portfolio/widgets/site_logo.dart';
 
-class homePage extends StatefulWidget {
-  const homePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<homePage> createState() => _homePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _homePageState extends State<homePage> {
+class _HomePageState extends State<HomePage> {
   final Scaffoldkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -55,18 +54,18 @@ class _homePageState extends State<homePage> {
               ),
 
             // User form->1
-            const user_form(),
+            const UserForm(),
             
 
             // Signup form->2
-            const signup_user(),
+            const SignupUser(),
 
             // contact->3
-            const login_user(),
+            const LoginUser(),
 
 
             // about us
-           const about_us(),
+           const AboutUs(),
           ],
         ),
       );

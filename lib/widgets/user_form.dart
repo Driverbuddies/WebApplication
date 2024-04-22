@@ -1,14 +1,14 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class user_form extends StatefulWidget {
-  const user_form({Key? key}) : super(key: key);
+class UserForm extends StatefulWidget {
+  const UserForm({Key? key}) : super(key: key);
 
   @override
-  State<user_form> createState() => _user_formState();
+  State<UserForm> createState() => _UserFormState();
 }
 
-class _user_formState extends State<user_form> {
+class _UserFormState extends State<UserForm> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -21,17 +21,16 @@ class _user_formState extends State<user_form> {
           children: [
             // Left side - Image
             Container(
-  width: 500,
-  height: 300,
-  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(20.0), // Adding border radius
-    image: const DecorationImage(
-      image: AssetImage("assets/images/images.png"),
-      fit: BoxFit.cover,
-    ),
-  ),
-),
-
+              width: 500,
+              height: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0), // Adding border radius
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/images.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
 
             const SizedBox(width: 50), // Increased width of SizedBox
 
@@ -40,32 +39,6 @@ class _user_formState extends State<user_form> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Name',
-                      fillColor: Colors.black87,
-                      filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                    keyboardType: TextInputType.text,
-                    // You can add validation logic here if required
-                  ),
-                  const SizedBox(height: 16.0), // Add some space between fields
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      fillColor: Colors.black87,
-                      filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    // You can add validation logic here if required
-                  ),
-                  const SizedBox(height: 16.0), // Add some space between fields
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Starting Location',
@@ -105,24 +78,33 @@ class _user_formState extends State<user_form> {
                     // You can add validation logic here if required
                   ),
                   const SizedBox(height: 16.0), // Add some space between fields
-                  TextFormField(
+                  DropdownButtonFormField<String>(
                     decoration: InputDecoration(
-                      labelText: 'Vehicle',
+                      labelText: 'Payment Method',
                       fillColor: Colors.black87,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    keyboardType: TextInputType.text,
-                    // You can add validation logic here if required
+                    value: null,
+                    items: <String>[
+                      'Pay on Delivery',
+                      'Paytm',
+                      'PhonePe',
+                      'Google Pay',
+                      'Apply Card',
+                    ].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? value) {
+                      // Handle dropdown value change
+                    },
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 18.0),
-                    child: Center(
-                      child: SizedBox(height: 16.0),
-                    ),
-                  ), // Add some space between fields
+                  const SizedBox(height: 16.0), // Add some space between fields
                   Padding(
                     padding: const EdgeInsets.only(left: 180.0),
                     child: ElevatedButton(
